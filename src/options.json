@@ -1,0 +1,10 @@
+{
+  "additionalProperties": true,
+  "properties": {
+    "quality": {
+      "description": "quality factor (0:small..100:big), default=75",
+      "type": "number"
+    }
+  },
+  "type": "object"
+}
