@@ -1,6 +1,6 @@
 {
   "name": "image2webp-loader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "image loader module for webpack",
   "main": "dist/cjs.js",
   "scripts": {
@@ -13,8 +13,6 @@
   "repository": "https://github.com/musishui/image2webp-loader.git",
   "license": "MIT",
   "dependencies": {
-    "bin-build": "^3.0.0",
-    "bin-wrapper": "^4.1.0",
     "cwebp": "^2.0.5",
     "cwebp-bin": "^6.1.1",
     "loader-utils": "^2.0.0",
