@@ -1,6 +1,6 @@
 {
   "name": "image2webp-loader",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "image loader module for webpack",
   "main": "dist/cjs.js",
   "scripts": {
