@@ -42,8 +42,7 @@ export default async function loader(content) {
       if (typeof options.publicPath === 'function') {
         publicPath = options.publicPath(url, this.resourcePath, context)
       } else {
-        publicPath = `${
-          options.publicPath.endsWith('/')
+        publicPath = `${options.publicPath.endsWith('/')
             ? options.publicPath
             : `${options.publicPath}/`
           }${url}`
@@ -78,12 +77,10 @@ export default async function loader(content) {
   const esModule = typeof options.esModule !== 'undefined' ? options.esModule : false
   let returnObj
   if (isWebp) {
-    options.name = `${options.name}.webp`
-    const webpPath = loadFile(webpcontent, options)
+    const webpPath = loadFile(webpcontent, { ...options, name: `${options.name}.webp` })
     const importPath = loaderUtils.stringifyRequest(this, `!${path.join(__dirname, 'runtime/index.js')}`)
     const rtn = `api(${publicPath}, ${webpPath})`
-    returnObj = `${
-      esModule
+    returnObj = `${esModule
         ? `import api from ${importPath};export default ${rtn};`
         : `var api = require(${importPath}); module.exports=${rtn};`
       }`
