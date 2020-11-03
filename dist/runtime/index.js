@@ -8,14 +8,10 @@ function isSupportWebp() {
   }
 }
 
-const webpKey = '__isSupportWebp__';
-
-if (window && typeof window[webpKey] === 'undefined') {
-  window[webpKey] = isSupportWebp();
-}
+const supportWebp = isSupportWebp();
 
 module.exports = function (publicPath, webpPublicPath) {
-  if (!webpPublicPath || !window[webpKey]) {
+  if (!webpPublicPath || !supportWebp) {
     return publicPath;
   } else {
     return webpPublicPath;

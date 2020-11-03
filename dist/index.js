@@ -90,8 +90,9 @@ async function loader(content) {
   let returnObj;
 
   if (isWebp) {
-    options.name = `${options.name}.webp`;
-    const webpPath = loadFile(webpcontent, options);
+    const webpPath = loadFile(webpcontent, { ...options,
+      name: `${options.name}.webp`
+    });
 
     const importPath = _loaderUtils.default.stringifyRequest(this, `!${_path.default.join(__dirname, 'runtime/index.js')}`);
 
